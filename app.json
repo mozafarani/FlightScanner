@@ -2,7 +2,12 @@
   "expo": {
     "name": "my_kitchen",
     "slug": "my_kitchen",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "0b3b233d-54a2-4c55-bd95-e87ba182d119"
+      }
+    }
   },
   "name": "my_kitchen"
 }
