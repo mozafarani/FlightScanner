@@ -7,7 +7,7 @@ import {
   ImageBackground,
   Dimensions,
 } from "react-native";
-import backgroundImage from "../assets/kebda.jpeg"; // Ensure this path is correct
+import backgroundImage from "../assets/main.webp"; // Ensure this path is correct
 
 const { height } = Dimensions.get("window");
 
@@ -27,13 +27,13 @@ export default function LanguageSelectionScreen({ navigation }) {
         <View style={styles.form}>
           <Text style={styles.formTitle}>Select Language</Text>
           <TouchableOpacity
-            style={styles.button}
+            style={[styles.button, styles.englishButton]}
             onPress={() => handleLanguageSelection("EN")}
           >
             <Text style={styles.buttonText}>English</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.button}
+            style={[styles.button, styles.arabicButton]}
             onPress={() => handleLanguageSelection("AR")}
           >
             <Text style={styles.buttonText}>العربية</Text>
@@ -47,60 +47,70 @@ export default function LanguageSelectionScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "#FAF3E0", // Soft cream background
   },
   image: {
     width: "100%",
-    height: height * 0.65, // Cover more than half of the screen
+    height: height * 0.6, // Cover more than half of the screen
     justifyContent: "center",
     alignItems: "center",
   },
-  imageStyle: {},
-  overlay: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.4)",
-    width: "100%",
-    height: "100%",
+  imageStyle: {
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
   },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#fff",
-  },
   curvedContainer: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#FFFFFF",
     marginTop: -30,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     alignItems: "center",
     paddingTop: 30,
+    paddingBottom: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   form: {
     width: "90%",
     alignItems: "center",
   },
   formTitle: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "#333",
+    color: "#4A4A4A", // Dark grey for better readability
   },
   button: {
     height: 50,
     borderRadius: 25,
-    backgroundColor: "#e65d24", // Use the matching color here
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    marginTop: 20,
+    marginTop: 15,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  englishButton: {
+    backgroundColor: "#FF7F50", // Green color for English button
+  },
+  arabicButton: {
+    backgroundColor: "#FF7F50", // Red color for Arabic button
   },
   buttonText: {
-    color: "#fff",
+    color: "#FFFFFF",
     fontSize: 18,
     fontWeight: "bold",
   },
